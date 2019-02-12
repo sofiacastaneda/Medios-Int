@@ -1,6 +1,6 @@
 # Medios-Int
 
-1. Índice: Ejercicios realizados para la clase. 
+1. [Índice] (https://sofiacastaneda.github.io/Medios-Int/) :Ejercicios realizados para la clase. 
 2. [Color y forma] (https://sofiacastaneda.github.io/Medios-Int/onwhiteii/)
 [Código] (https://github.com/sofiacastaneda/Medios-Int/blob/master/onwhiteii/onwhiteii.js)
 3. [Repetición] (https://sofiacastaneda.github.io/Medios-Int/sofiaannie/)
