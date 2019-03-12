@@ -39,80 +39,7 @@ function draw() {
   minu2 = map(minu, 0, 59, 0, 360);
   hora2 = map(hora, 0, 23, 0, width);
 
-    //cara normal
-stroke(255,192,203);
-  fill(255,192,203);
-  ellipse(mouseX, mouseY, 35, 35);
-noStroke();
-  //ojo s
-  fill(0,0,0);
-  ellipse(mouseX-8,mouseY-5,10,10);
-    ellipse(mouseX+8,mouseY-5,10,10);
-  //boca
-  arc(mouseX,mouseY+5,20,20,TWO_PI,PI);
-  
-  if (dist(mouseX, mouseY, seg2, seg2) < 40) {
-  //círculo que sigue al mouse
-  //cara preocupada
-  stroke(251,41,67);
-  fill(251,41,67);
-  ellipse(mouseX, mouseY, 35, 35);
-noStroke();
-  //ojo s
-  fill(0,0,0);
-  ellipse(mouseX-8,mouseY-5,10,10);
-    ellipse(mouseX+8,mouseY-5,10,10);
-  //boca
-  stroke(0,0,0);
-  strokeWeight(3);
-  line(mouseX-10,mouseY+10,mouseX+10,mouseY+10);
-  //cejas  
-  strokeWeight(4);
-  line(mouseX-14,mouseY-5,mouseX-6,mouseY-10);
-    line(mouseX+14,mouseY-5,mouseX+6,mouseY-10);
-  }
-  
-  if (dist(mouseX, mouseY, minu2, minu2) < 40) {
-  //círculo que sigue al mouse
-  //cara preocupada
-  stroke(251,41,67);
-  fill(251,41,67);
-  ellipse(mouseX, mouseY, 35, 35);
-noStroke();
-  //ojo s
-  fill(0,0,0);
-  ellipse(mouseX-8,mouseY-5,10,10);
-    ellipse(mouseX+8,mouseY-5,10,10);
-  //boca
-  stroke(0,0,0);
-  strokeWeight(3);
-  line(mouseX-10,mouseY+10,mouseX+10,mouseY+10);
-  //cejas  
-  strokeWeight(4);
-  line(mouseX-14,mouseY-5,mouseX-6,mouseY-10);
-    line(mouseX+14,mouseY-5,mouseX+6,mouseY-10);
-  }
-  
-  if (dist(mouseX, mouseY, hora2, hora2) < 40) {
-  //círculo que sigue al mouse
-  //cara preocupada
-  stroke(251,41,67);
-  fill(251,41,67);
-  ellipse(mouseX, mouseY, 35, 35);
-noStroke();
-  //ojo s
-  fill(0,0,0);
-  ellipse(mouseX-8,mouseY-5,10,10);
-    ellipse(mouseX+8,mouseY-5,10,10);
-  //boca
-  stroke(0,0,0);
-  strokeWeight(3);
-  line(mouseX-10,mouseY+10,mouseX+10,mouseY+10);
-  //cejas  
-  strokeWeight(4);
-  line(mouseX-14,mouseY-5,mouseX-6,mouseY-10);
-    line(mouseX+14,mouseY-5,mouseX+6,mouseY-10);
-  }
+
   
   //Barra 1: segundero
   strokeWeight(4);
@@ -208,6 +135,7 @@ noStroke();
     expSegY = random(0, height);
 
     for (var f = 0; f < 100; f++) {
+            fill(255, 197, 18);
       ellipse(random(0, width), random(0, height), 10, 10);
     }
 
@@ -224,6 +152,7 @@ noStroke();
       expMinuY = random(0, height);
 
       for (var g = 0; g < 150; g++) {
+              fill(98,152,253);
         ellipse(random(0, width), random(0, height), 20, 20);
       }
     }
@@ -238,12 +167,13 @@ noStroke();
       expHoraY = random(0, height);
 
       for (var h = 0; h < 250; h++) {
+        fill(255,255,255);
         ellipse(random(0, width), random(0, height), 35, 35);
       }
 
     }
 
-
+/*
     //generador random por proximidad entre segundero y minutero
     if (dist(seg2, seg2, minu2, minu2) < 20) {
       stroke(255, 255, 0);
@@ -257,12 +187,103 @@ noStroke();
       }
 
 
-    }
+      //generador random por proximidad entre segundero y hora
+    if (dist(seg2, seg2, hora2, hora2) < 20) {
+      stroke(255, 255, 0);
+      strokeWeight(4);
+      ellipse(x, y, 10, 10);
+      x = random(0, width);
+      y = random(0, height);
 
+      for (var i = 0; i < 20; i++) {
+        ellipse(random(0, width), random(0, height), 10, 10);
+      }
+      
+      }
+    }
+*/
     
     
     
   }
 
+      //cara normal
+stroke(255,192,203);
+  fill(255,192,203);
+  ellipse(mouseX, mouseY, 35, 35);
+noStroke();
+  //ojo s
+  fill(0,0,0);
+  ellipse(mouseX-8,mouseY-5,10,10);
+    ellipse(mouseX+8,mouseY-5,10,10);
+  //boca
+  arc(mouseX,mouseY+5,20,20,TWO_PI,PI);
+  
+  
+    //PARA PONER LA CARA ROJA CUANDO SE ACERQUE AL SEGUNDERO
+  if (dist(mouseX, mouseY, seg2, seg2) < 40) {
+  //círculo que sigue al mouse
+  //cara preocupada
+  stroke(251,41,67);
+  fill(251,41,67);
+  ellipse(mouseX, mouseY, 35, 35);
+noStroke();
+  //ojo s
+  fill(0,0,0);
+  ellipse(mouseX-8,mouseY-5,10,10);
+    ellipse(mouseX+8,mouseY-5,10,10);
+  //boca
+  stroke(0,0,0);
+  strokeWeight(3);
+  line(mouseX-10,mouseY+10,mouseX+10,mouseY+10);
+  //cejas  
+  strokeWeight(4);
+  line(mouseX-14,mouseY-5,mouseX-6,mouseY-10);
+    line(mouseX+14,mouseY-5,mouseX+6,mouseY-10);
+  }
+  
+ //PARA PONER LA CARA ROJA CUANDO SE ACERQUE AL MINUTERO
+  if (dist(mouseX, mouseY, minu2, minu2) < 40) {
+  //cara preocupada
+  stroke(251,41,67);
+  fill(251,41,67);
+  ellipse(mouseX, mouseY, 35, 35);
+noStroke();
+  //ojo s
+  fill(0,0,0);
+  ellipse(mouseX-8,mouseY-5,10,10);
+    ellipse(mouseX+8,mouseY-5,10,10);
+  //boca
+  stroke(0,0,0);
+  strokeWeight(3);
+  line(mouseX-10,mouseY+10,mouseX+10,mouseY+10);
+  //cejas  
+  strokeWeight(4);
+  line(mouseX-14,mouseY-5,mouseX-6,mouseY-10);
+    line(mouseX+14,mouseY-5,mouseX+6,mouseY-10);
+  }
+  
+  
+  //PARA PONER LA CARA ROJA CUANDO SE ACERQUE A LA HORA
+  if (dist(mouseX, mouseY, hora2, hora2) < 40) {
+  //círculo que sigue al mouse
+  //cara preocupada
+  stroke(251,41,67);
+  fill(251,41,67);
+  ellipse(mouseX, mouseY, 35, 35);
+noStroke();
+  //ojo s
+  fill(0,0,0);
+  ellipse(mouseX-8,mouseY-5,10,10);
+    ellipse(mouseX+8,mouseY-5,10,10);
+  //boca
+  stroke(0,0,0);
+  strokeWeight(3);
+  line(mouseX-10,mouseY+10,mouseX+10,mouseY+10);
+  //cejas  
+  strokeWeight(4);
+  line(mouseX-14,mouseY-5,mouseX-6,mouseY-10);
+    line(mouseX+14,mouseY-5,mouseX+6,mouseY-10);
+  }
 
 }
