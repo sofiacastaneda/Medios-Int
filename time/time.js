@@ -39,6 +39,81 @@ function draw() {
   minu2 = map(minu, 0, 59, 0, 360);
   hora2 = map(hora, 0, 23, 0, width);
 
+    //cara normal
+stroke(255,192,203);
+  fill(255,192,203);
+  ellipse(mouseX, mouseY, 35, 35);
+noStroke();
+  //ojo s
+  fill(0,0,0);
+  ellipse(mouseX-8,mouseY-5,10,10);
+    ellipse(mouseX+8,mouseY-5,10,10);
+  //boca
+  arc(mouseX,mouseY+5,20,20,TWO_PI,PI);
+  
+  if (dist(mouseX, mouseY, seg2, seg2) < 40) {
+  //círculo que sigue al mouse
+  //cara preocupada
+  stroke(251,41,67);
+  fill(251,41,67);
+  ellipse(mouseX, mouseY, 35, 35);
+noStroke();
+  //ojo s
+  fill(0,0,0);
+  ellipse(mouseX-8,mouseY-5,10,10);
+    ellipse(mouseX+8,mouseY-5,10,10);
+  //boca
+  stroke(0,0,0);
+  strokeWeight(3);
+  line(mouseX-10,mouseY+10,mouseX+10,mouseY+10);
+  //cejas  
+  strokeWeight(4);
+  line(mouseX-14,mouseY-5,mouseX-6,mouseY-10);
+    line(mouseX+14,mouseY-5,mouseX+6,mouseY-10);
+  }
+  
+  if (dist(mouseX, mouseY, minu2, minu2) < 40) {
+  //círculo que sigue al mouse
+  //cara preocupada
+  stroke(251,41,67);
+  fill(251,41,67);
+  ellipse(mouseX, mouseY, 35, 35);
+noStroke();
+  //ojo s
+  fill(0,0,0);
+  ellipse(mouseX-8,mouseY-5,10,10);
+    ellipse(mouseX+8,mouseY-5,10,10);
+  //boca
+  stroke(0,0,0);
+  strokeWeight(3);
+  line(mouseX-10,mouseY+10,mouseX+10,mouseY+10);
+  //cejas  
+  strokeWeight(4);
+  line(mouseX-14,mouseY-5,mouseX-6,mouseY-10);
+    line(mouseX+14,mouseY-5,mouseX+6,mouseY-10);
+  }
+  
+  if (dist(mouseX, mouseY, hora2, hora2) < 40) {
+  //círculo que sigue al mouse
+  //cara preocupada
+  stroke(251,41,67);
+  fill(251,41,67);
+  ellipse(mouseX, mouseY, 35, 35);
+noStroke();
+  //ojo s
+  fill(0,0,0);
+  ellipse(mouseX-8,mouseY-5,10,10);
+    ellipse(mouseX+8,mouseY-5,10,10);
+  //boca
+  stroke(0,0,0);
+  strokeWeight(3);
+  line(mouseX-10,mouseY+10,mouseX+10,mouseY+10);
+  //cejas  
+  strokeWeight(4);
+  line(mouseX-14,mouseY-5,mouseX-6,mouseY-10);
+    line(mouseX+14,mouseY-5,mouseX+6,mouseY-10);
+  }
+  
   //Barra 1: segundero
   strokeWeight(4);
 
@@ -56,7 +131,6 @@ function draw() {
   fill(98,152,253);
   rect(10, 0, 20, height);
   stroke(0);
-
 
 
   //Barra 3: indicadhora 
@@ -104,11 +178,12 @@ function draw() {
   strokeWeight(8);
   line(hora2, 320, hora2, 390);
 
-  //círculo que sigue al mouse
-  stroke(251,41,67);
-  fill(251,41,67);
-  ellipse(mouseX, mouseY, 15, 15);
-  line(mouseX,mouseY,mouseX,mouseY+35);
+  
+
+  
+  /*
+  //torso
+    line(mouseX,mouseY,mouseX,mouseY+35);
   //brazo izq
   line(mouseX,mouseY+10,mouseX-10,mouseY+25);
 //brazo der
@@ -117,14 +192,14 @@ function draw() {
     line(mouseX,mouseY+35,mouseX-10,mouseY+55);
   //pierna der
     line(mouseX,mouseY+35,mouseX+10,mouseY+55);
-
+*/
 
   
 
   
   //generador de círculos random segundero
 
-  if (dist(mouseX, mouseY, seg2, seg2) < 80) {
+  if (dist(mouseX, mouseY, seg2, seg2) < 20) {
     stroke(255, 197, 18);
     strokeWeight(4);
       fill(255, 197, 18);
@@ -132,14 +207,14 @@ function draw() {
     expSegX = random(0, width);
     expSegY = random(0, height);
 
-    for (var f = 0; f < 10; f++) {
+    for (var f = 0; f < 100; f++) {
       ellipse(random(0, width), random(0, height), 10, 10);
     }
 
 
     //generador de círculos random minutero
 
-    if (dist(mouseX, mouseY, minu2, minu2) < 20) {
+    if (dist(mouseX, mouseY, minu2, minu2) < 30) {
       stroke(98,152,253);
       fill(98,152,253);
       strokeWeight(4);
@@ -148,29 +223,29 @@ function draw() {
       expMinuX = random(0, width);
       expMinuY = random(0, height);
 
-      for (var g = 0; g < 100; g++) {
+      for (var g = 0; g < 150; g++) {
         ellipse(random(0, width), random(0, height), 20, 20);
       }
     }
 
 
     //generador de círculos random indhora
-    if (dist(mouseX, mouseY, hora2, hora2) < 20) {
+    if (dist(mouseX, mouseY, hora2, hora2) < 40) {
       stroke(255,255,255);
       strokeWeight(4);
       ellipse(expHoraX, expHoraY, 10, 10);
       expHoraX = random(0, width);
       expHoraY = random(0, height);
 
-      for (var h = 0; h < 200; h++) {
-        ellipse(random(0, width), random(0, height), 30, 30);
+      for (var h = 0; h < 250; h++) {
+        ellipse(random(0, width), random(0, height), 35, 35);
       }
 
     }
 
 
     //generador random por proximidad entre segundero y minutero
-    if (dist(seg2, seg2, minu2, minu2) < 10) {
+    if (dist(seg2, seg2, minu2, minu2) < 20) {
       stroke(255, 255, 0);
       strokeWeight(4);
       ellipse(x, y, 10, 10);
@@ -184,6 +259,9 @@ function draw() {
 
     }
 
+    
+    
+    
   }
 
 
