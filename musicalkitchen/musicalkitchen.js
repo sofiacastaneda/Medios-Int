@@ -50,8 +50,8 @@ function preload () {
   batidora = loadImage('assets/batidora.png');
   cuchillo = loadImage('assets/cuchillo.png');
 
-  cancionb = loadSound('assets/clasica.mp3');
-  cancionj = loadSound('assets/rock.mp3');
+  //cancionb = loadSound('assets/clasica.mp3');
+  //cancionj = loadSound('assets/rock.mp3');
 }
 
 function setup() {
