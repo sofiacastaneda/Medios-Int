@@ -57,29 +57,39 @@ function preload () {
 function setup() {
   createCanvas(600, 400);
   background(100);
+  
+  //POSICIÓN DE INICIO BEETHOVEN
   x = 150;
   y = 250;
+  
+  
+  //REPRODUCCIÓN DE LAS CANCIONES
   //cancionj.play();
   //cancionb.play();
 }
 
 function draw() {
+  
+  //MAPEO DEL VOLUMEN - ABAJO MENOS ARRIBA MÁS
   //vol1 = map(mouseY, 0, height, 0.0, 1.1);
   //vol2 = map(y, 0, height, 0.0, 1.1);
+  
+  //AJUSTE DEL VOLUMEN
   //cancionj.setVolume(vol1);
   //cancionb.setVolume(vol2);
   
 
-
   //PANEO PARA LA SECCIÓN QUE CUBRE LA IMAGEN DEL HORNO
+  
+  //PARA JAGGER
   //hornear = map(mouseX, 100, 170, -1.0, 1.0);
   //cancionj.pan(hornear);
-
+  
+//PARA BEETHOVEN
   //hornear = map(x, 100, 170, -1.0, 1.0);
   //cancionb.pan(hornear);
 
   //MOVER LA IMAGEN DE JAGGER
-
   image(fondo, 0, 0, width, height); 
   image(mick, mouseX, mouseY, 100, 100); 
   image(ludwig, x, y, 100, 100); 
@@ -97,14 +107,13 @@ function draw() {
 
 
   //PARA QUE CUANDO SE ACERQUE A LA BATIDORA AUMENTE EL RATE
-
-  //PERSONAJE JAGGER
+  //RATE PERSONAJE JAGGER
   //if (dist(MouseX, MouseY, e, f) < 20) {
   //  cancionj.rate(1+z);
   //  z = 0.5
   //}
 
-  ////PERSONAJE BEETHOVEN
+  ////RATE PERSONAJE BEETHOVEN
   //if (dist(x, y, e, f) < 20) {
   //  cancionb.rate(1+(x/200));
   //  x = 0.5
@@ -112,22 +121,24 @@ function draw() {
 
 
   //PARA QUE CUANDO SE ACERQUE AL CUCHILLO SALTE
-
-  //PERSONAJE JAGGER
+  
+  //JUMP PERSONAJE JAGGER
   //if (dist(MouseX, MouseY, g, h) < 20) {
   //  cancionj.jump(actual + 1);
   //}
 
-  ////PERSONAJE BEETHOVEN
+  ////JUMP PERSONAJE BEETHOVEN
   //if (dist(X, Y, g, h) < 20) {
   //  cancionB.jump(actual + 1);
   //}
 
+
+//VARIABLE DE ACTUAL
   //actual = cancionb.currentTime();
   //actual = cancionj.currentTime();
 }
 
-//CONTROLES BEETHOVEN
+//CONTROLES TECLAS BEETHOVEN
 function keyPressed() {
   if (keyIsPressed == true) {
     if (keyCode == RIGHT_ARROW) {
