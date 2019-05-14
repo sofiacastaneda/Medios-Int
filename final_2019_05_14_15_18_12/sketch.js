@@ -32,7 +32,7 @@ var cierre = 11;
 ///////////////////////////
 
 
-var estado = graf1numero;
+var estado = intro;
 
 
 //Variables para cada una de las tablas
